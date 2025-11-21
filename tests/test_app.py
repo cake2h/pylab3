@@ -4,12 +4,11 @@ import sys
 import pandas as pd
 import pytest
 
+from app import compute_total_fare_by_class
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
     sys.path.insert(0, PROJECT_ROOT)
-
-from app import compute_total_fare_by_class
 
 
 def test_compute_total_fare_by_class_basic() -> None:
@@ -47,5 +46,3 @@ def test_compute_total_fare_by_class_missing_columns() -> None:
     )
     with pytest.raises(ValueError):
         compute_total_fare_by_class(df, "male")
-
-
