@@ -54,5 +54,3 @@ def total_fare_by_class(payload: TotalFareRequest) -> TotalFareResponse:
     ]
 
     return TotalFareResponse(sex=payload.sex, items=items)
-
-
